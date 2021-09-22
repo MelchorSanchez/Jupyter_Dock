@@ -6,8 +6,11 @@
 
 ######
 ## Set some environment variables.
-ADS_ROOT="/mnt/c/Users/angel/Desktop/Reverse_docking_vina/ADFRsuite" 
+#ADS_ROOT="/mnt/c/Users/angel/Desktop/Reverse_docking_vina/ADFRsuite" 
+ADS_ROOT="/home/melchor/Software/mgltools_x86_64Linux2_1.5.6"
 export ADS_ROOT
+
+
 
 ########
 ## plaform we run on
@@ -105,7 +108,8 @@ then
 	unset PYTHONHOME
 	PYTHONHOME="$ADS_ROOT"
 	export PYTHONHOME
-	PYTHONPATH="$ADS_ROOT/CCSBpckgs"
+	#PYTHONPATH="$ADS_ROOT/CCSBpckgs"
+	PYTHONPATH="$ADS_ROOT/MGLToolsPckgs"
 	export PYTHONPATH
 	python="$ADS_ROOT/bin/python"
 else
@@ -114,7 +118,11 @@ else
 fi
 if test $# -gt 0
 then
-	exec $python $pyflags $ADS_ROOT/CCSBpckgs/AutoDockTools/Utilities24/prepare_receptor4.py $@
+	#exec $python $pyflags $ADS_ROOT/CCSBpckgs/AutoDockTools/Utilities24/prepare_receptor4.py $@
+	exec $python $pyflags $ADS_ROOT/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py $@
 else
-	exec $python $pyflags $ADS_ROOT/CCSBpckgs/AutoDockTools/Utilities24/prepare_receptor4.py
+	#exec $python $pyflags $ADS_ROOT/CCSBpckgs/AutoDockTools/Utilities24/prepare_receptor4.py
+	exec $python $pyflags $ADS_ROOT/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py
+
 fi
+
